@@ -8,16 +8,11 @@
     <h1><%= @members.count %> Results</h1>
     <% @members.each do |member| %>
       <section class="member">
-        <p class="name"><b><%= member[:name] %></b></p>
-        <ul>
-          <% if member[:role] %>
-            <li class="role"><b>Role: </b><%= member[:role] %></li>
-          <% end %>
-          <li class="house"><b>House: </b><%= member[:house] %></li>
-          <% if member[:patronus] %>
-            <li class="patronus"><b>Patronus: </b><%= member[:patronus] %></li>
-          <% end %>
-        </ul>
+        <p class="name"><b><%= member.name %></b></p>
+        <p class="role"><b>Role: </b><%= member.role %></p>
+        <p class="house"><b>House: </b><%= member.house %></p>
+        <p class="patronus"><b>Patronus: </b><%= member.patronus %></p>
+        <br>
       </section>
     <% end %>
   </nav>
