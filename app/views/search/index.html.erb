@@ -1,9 +1,23 @@
-<h1><%= @members.count %> Results</h1>
-<% @members.each do |member| %>
-  <section class="member">
-    <p class="name"><%= member[:name] %></p>
-    <p class="role"><%= member[:role] %></p>
-    <p class="house"><%= member[:house] %></p>
-    <p class="patronus"><%= member[:patronus] %></p>
-  </section>
-<% end %>
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+      <p class ="navbar-brand">The Order of The Phoenix</p>
+      <p class="subtitle">Search For Members of The Order of The Phoenix By House</p>
+    </div>
+    <h1><%= @members.count %> Results</h1>
+    <% @members.each do |member| %>
+      <section class="member">
+        <p class="name"><b><%= member[:name] %></b></p>
+        <ul>
+          <% if member[:role] %>
+            <li class="role"><b>Role: </b><%= member[:role] %></li>
+          <% end %>
+          <li class="house"><b>House: </b><%= member[:house] %></li>
+          <% if member[:patronus] %>
+            <li class="patronus"><b>Patronus: </b><%= member[:patronus] %></li>
+          <% end %>
+        </ul>
+      </section>
+    <% end %>
+  </nav>
+</body

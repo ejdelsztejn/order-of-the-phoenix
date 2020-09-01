@@ -25,6 +25,7 @@ feature "user can search for Order of the Phoenix members" do
     # - The members role (if it exists)
     # - The house the member belongs to
     # - The Patronus of the member (if it exists)
+    save_and_open_page
     within(first(".member")) do
       expect(page).to have_css(".name")
       expect(page).to have_css(".role")
